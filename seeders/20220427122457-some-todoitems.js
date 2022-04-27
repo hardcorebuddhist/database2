@@ -24,7 +24,7 @@ module.exports = {
         {
           task: "Go swimming",
           deadline: "24/5/2022",
-          todolistId: 2,
+          todolistId: 1,
           important: true,
           createdAt: new Date(),
           updatedAt: new Date(),
