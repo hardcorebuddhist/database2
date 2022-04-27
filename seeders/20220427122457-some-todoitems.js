@@ -8,18 +8,21 @@ module.exports = {
         {
           task: "Finish reports",
           deadline: "20/3/2020",
+          important: true,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           task: "Plan Birthday",
           deadline: "24/5/2022",
+          important: false,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
           task: "Go swimming",
           deadline: "24/5/2022",
+          important: true,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
