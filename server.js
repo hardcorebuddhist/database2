@@ -32,13 +32,33 @@ app.get("/todoitems", async (req, res) => {
   res.send(todoitems);
 });
 
-// POST
+// CREATE NEW USER
 
 app.post("/users", async (req, res, next) => {
   try {
     const { name, email, password, phone } = req.body;
     const newUser = await User.create({ name, email, password, phone });
     res.send(newUser);
+  } catch (e) {
+    console.log(e);
+    next(e);
+  }
+});
+
+// UPDATE USER's PHONE
+
+app.patch("/users/:id", async (req, res, next) => {
+  try {
+    const { phone } = req.body;
+    const { id } = request.params;
+
+    // find the user
+    const user = await User.findByPk(id);
+
+    // then update user
+    const updatedUser = await user.update({ phone });
+
+    res.send(updatedUser);
   } catch (e) {
     console.log(e);
     next(e);
