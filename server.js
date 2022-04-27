@@ -17,8 +17,8 @@ app.get("/todolists", async (req, res) => {
 });
 
 app.get("/todoitems", async (req, res) => {
-  const todoitem = await TodoItem.findAll();
-  res.send(todoitem);
+  const todoitems = await TodoItem.findAll();
+  res.send(todoitems);
 });
 
 app.listen(PORT, () => console.log(`Server started in port: ${PORT}`));
