@@ -49,14 +49,14 @@ app.post("/users", async (req, res, next) => {
 
 app.patch("/users/:id", async (req, res, next) => {
   try {
-    const { phone } = req.body;
-    const { id } = request.params;
+    const { name } = req.body;
+    const { id } = req.params;
 
     // find the user
     const user = await User.findByPk(id);
 
     // then update user
-    const updatedUser = await user.update({ phone });
+    const updatedUser = await user.update({ name });
 
     res.send(updatedUser);
   } catch (e) {
